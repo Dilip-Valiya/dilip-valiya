@@ -4,10 +4,6 @@ import myPhoto from "../../public/my_photo.jpg";
 export default function Home() {
   return (
     <main className="min-h-screen text-white box-border">
-      <header className="flex items-center pl-8 bg-gray-700 h-16">
-        Dilip Valiya
-      </header>
-
       <section className="flex flex-col justify-between items-center bg-black md:p-24 p-4 max-w-7xl mx-auto">
         <section
           id="profile"
