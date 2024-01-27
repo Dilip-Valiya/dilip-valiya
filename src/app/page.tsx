@@ -3,12 +3,11 @@ import myPhoto from "../../public/my_photo.jpg";
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white">
-      <div className="fixed w-full z-[99]">
-        <header className="h-16 flex items-center pl-8 bg-gray-700">
-          Dilip Valiya
-        </header>
-      </div>
+    <main className="min-h-screen text-white box-border">
+      <header className="flex items-center pl-8 bg-gray-700 h-16">
+        Dilip Valiya
+      </header>
+
       <section className="flex flex-col justify-between items-center bg-black md:p-24 p-4 max-w-7xl mx-auto">
         <section
           id="profile"
@@ -166,23 +165,25 @@ export default function Home() {
           </ol>
         </section>
       </section>
-      <footer className="text-left w-full flex gap-4 bg-gray-700 pl-4 md:pl-16 lg:pl-24 h-20 items-center">
-        <a href="mailto:dilipkvaliya@gmail.com">
-          <i className="fa fa-envelope-o"></i>
-          <span className="pl-2">dilipkvaliya@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/dilipkvaliya" target="_blank">
-          <i className="fa fa-linkedin-square"></i>
-          <span className="pl-2">dilipkvaliya</span>
-        </a>
-        <a href="https://github.com/Dilip-Valiya" target="_blank">
-          <i className="fa fa-github"></i>
-          <span className="pl-2">Dilip-Valiya</span>
-        </a>
-        <a href="https://www.instagram.com/dilip.valiya.99/" target="_blank">
-          <i className="fa fa-instagram"></i>
-          <span className="pl-2">dilip.valiya.99</span>
-        </a>
+      <footer className="w-full bg-gray-700">
+        <div className="mx-auto max-w-7xl flex flex-wrap gap-4 items-center justify-center min-h-20">
+          <a href="mailto:dilipkvaliya@gmail.com">
+            <i className="fa fa-envelope-o"></i>
+            <span className="pl-2">dilipkvaliya@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dilipkvaliya" target="_blank">
+            <i className="fa fa-linkedin-square"></i>
+            <span className="pl-2">dilipkvaliya</span>
+          </a>
+          <a href="https://github.com/Dilip-Valiya" target="_blank">
+            <i className="fa fa-github"></i>
+            <span className="pl-2">Dilip-Valiya</span>
+          </a>
+          <a href="https://www.instagram.com/dilip.valiya.99/" target="_blank">
+            <i className="fa fa-instagram"></i>
+            <span className="pl-2">dilip.valiya.99</span>
+          </a>
+        </div>
       </footer>
     </main>
   );

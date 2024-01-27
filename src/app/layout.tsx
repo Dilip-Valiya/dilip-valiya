@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Dilip Valiya, Senior Software Engineer at ZopSmart, Driven and determined software engineer, promoting 3+ years of experience in building client applications. Offers strong interpersonal and communication skills.",
   keywords:
     "Dilip, Dilip Valiya, Dilip Valiya ZopSmart, Dilip Valiya Software Engineer",
+  metadataBase: new URL("https://dilip-valiya.vercel.app"),
 };
 
 export default function RootLayout({
