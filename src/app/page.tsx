@@ -3,16 +3,16 @@ import myPhoto from "../../public/my_photo.jpg";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen text-white">
       <div className="fixed w-full z-[99]">
         <header className="h-16 flex items-center pl-8 bg-gray-700">
           Dilip Valiya
         </header>
       </div>
-      <section className="flex flex-col justify-between items-center bg-black p-24">
+      <section className="flex flex-col justify-between items-center bg-black md:p-24 p-4 max-w-7xl mx-auto">
         <section
           id="profile"
-          className="flex items-center justify-between w-[70%] gap-4"
+          className="flex items-center justify-between w-full md:w-[4/5] gap-4"
         >
           <div>
             <h1 className="text-3xl">Dilip Valiya</h1>
@@ -166,7 +166,7 @@ export default function Home() {
           </ol>
         </section>
       </section>
-      <footer className="text-left w-full flex gap-4 bg-gray-700 pl-24 h-20 items-center">
+      <footer className="text-left w-full flex gap-4 bg-gray-700 pl-4 md:pl-16 lg:pl-24 h-20 items-center">
         <a href="mailto:dilipkvaliya@gmail.com">
           <i className="fa fa-envelope-o"></i>
           <span className="pl-2">dilipkvaliya@gmail.com</span>
