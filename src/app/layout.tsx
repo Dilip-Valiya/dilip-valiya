@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dilip Valiya",
   description:
-    "Dilip Valiya, Senior Software Engineer at ZopSmart, Driven and determined soft- ware engineer, promoting 3+ years of experience in build- ing client applications. Offers strong interpersonal and communication skills.",
+    "Dilip Valiya, Senior Software Engineer at ZopSmart, Driven and determined software engineer, promoting 3+ years of experience in building client applications. Offers strong interpersonal and communication skills.",
   keywords:
     "Dilip, Dilip Valiya, Dilip Valiya ZopSmart, Dilip Valiya Software Engineer",
 };

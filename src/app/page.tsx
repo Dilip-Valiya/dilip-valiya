@@ -29,7 +29,7 @@ export default function Home() {
           <h1 className="m-0 pb-1">About Me</h1>
           <hr />
           <p className="pt-4">
-            Driven and determined soft- ware engineer, promoting 3+ years of
+            Driven and determined software engineer, promoting 3+ years of
             experience in building client applications. Offers strong
             interpersonal and communication skills.
           </p>
