@@ -30,7 +30,7 @@ export default function Home() {
           <hr />
           <p className="pt-4">
             Driven and determined soft- ware engineer, promoting 3+ years of
-            experience in build- ing client applications. Offers strong
+            experience in building client applications. Offers strong
             interpersonal and communication skills.
           </p>
         </section>
