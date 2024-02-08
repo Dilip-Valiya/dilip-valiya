@@ -18,16 +18,43 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.scroll-margin-top {
+  scroll-margin-top: 70px;
+}
+
+.bullet-points {
+  margin-left: 1.5rem;
+  /* Adjust this value as needed */
+}
+
+.bullet-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-points li {
+  margin-bottom: 0.5rem;
+  /* Adjust this value as needed */
+}
+
+.bullet-points li:before {
+  content: "\2022";
+  /* Unicode for bullet character */
+  color: #333;
+  /* Adjust bullet color as needed */
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  /* Adjust indentation of bullet */
 }
