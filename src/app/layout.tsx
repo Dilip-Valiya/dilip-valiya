@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black">
       <head>
         <link
           rel="stylesheet"
@@ -89,10 +89,10 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        <div className="mt-[70px]">{children}</div>
+        <div className="mt-[70px] bg-black">{children}</div>
         <Analytics />
         <footer className="w-full bg-gray-900 border-t border-gray-600">
-          <div className="mx-auto max-w-7xl flex flex-wrap gap-4 items-center justify-center min-h-20">
+          <div className="mx-auto max-w-7xl flex flex-wrap gap-4 items-center justify-center min-h-20 text-gray-300">
             <a href="mailto:dilipkvaliya@gmail.com">
               <i className="fa fa-envelope-o"></i>
               <span className="pl-2">dilipkvaliya@gmail.com</span>
