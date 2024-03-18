@@ -11,7 +11,7 @@ export default function Home() {
         >
           <div>
             <h1 className="text-3xl">Dilip Valiya</h1>
-            <h3>Senior Software Engineer, @ZopSmart</h3>
+            <h3>UI developer @Thoughtworks | Ex. ZopSmart</h3>
           </div>
           <Image
             src={myPhoto}
