@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Image from "next/image";
 
@@ -91,6 +92,7 @@ export default function RootLayout({
         </nav>
         <div className="mt-[70px] bg-black">{children}</div>
         <Analytics />
+        <GoogleAnalytics gaId="G-395FKB9G7P" />
         <footer className="w-full bg-gray-900 border-t border-gray-600">
           <div className="mx-auto max-w-7xl flex flex-wrap gap-4 items-center justify-center min-h-20 text-gray-300">
             <a href="mailto:dilipkvaliya@gmail.com">
