@@ -1,3 +1,6 @@
+"use client";
+
+import { sendGAEvent } from "@next/third-parties/google";
 import Image from "next/image";
 
 export default function Projects() {
@@ -8,7 +11,15 @@ export default function Projects() {
           className="text-left scroll-margin-top w-full"
           id="hiring-motion"
         >
-          <a href="/projects/#hiring-motion">
+          <a
+            href="/projects/#hiring-motion"
+            onClick={() =>
+              sendGAEvent({
+                event: "hashLinkClick",
+                value: "User went to Hiring Motion",
+              })
+            }
+          >
             <h1 className="m-0 pb-1 text-xl">1. Hiring Motion</h1>
           </a>
           <Image src="/hiring_motion.png" alt="hm" width={800} height={100} />
@@ -42,7 +53,15 @@ export default function Projects() {
           </div>
         </section>
         <section className="text-left scroll-margin-top w-full" id="kops">
-          <a href="/projects/#kops">
+          <a
+            href="/projects/#kops"
+            onClick={() =>
+              sendGAEvent({
+                event: "hashLinkClick",
+                value: "User went to KOps",
+              })
+            }
+          >
             <h1 className="m-0 pb-1 text-xl">2. KOps</h1>
           </a>
           <Image src="/kops.png" alt="hm" width={800} height={100} />
