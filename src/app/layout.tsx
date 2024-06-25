@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, sendGTMEvent } from "@next/third-parties/google";
 import "./globals.css";
 import Image from "next/image";
 
@@ -52,6 +52,12 @@ export default function RootLayout({
                 <button
                   type="button"
                   className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "buttonClicked",
+                      value: "User went to Projects page",
+                    })
+                  }
                 >
                   Projects
                 </button>
@@ -62,7 +68,14 @@ export default function RootLayout({
               id="navbar-sticky"
             >
               <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
-                <li>
+                <li
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "navbarClick",
+                      value: "User went to About",
+                    })
+                  }
+                >
                   <a
                     href="/#about"
                     className="block py-2 px-3 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
@@ -70,7 +83,14 @@ export default function RootLayout({
                     About
                   </a>
                 </li>
-                <li>
+                <li
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "navbarClick",
+                      value: "User went to Experience",
+                    })
+                  }
+                >
                   <a
                     href="/#experience"
                     className="block py-2 px-3 md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
@@ -78,7 +98,14 @@ export default function RootLayout({
                     Experience
                   </a>
                 </li>
-                <li>
+                <li
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "navbarClick",
+                      value: "User went to Education",
+                    })
+                  }
+                >
                   <a
                     href="/#education"
                     className="block py-2 px-3 md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
