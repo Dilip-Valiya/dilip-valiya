@@ -1,5 +1,5 @@
 # Dilip Valiya
-### Senior Software Engineer, at ZopSmart
+### UI Developer at Thoughtworks | EX. ZopSmart
 
 Driven and determined software engineer, promoting 3+ years of experience in building client applications. Offers strong interpersonal and communication skills.
 
