@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Portfolio Inquiry</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0f;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #ffffff;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      style="background-color: #0a0a0f; min-height: 100vh"
+    >
+      <tr>
+        <td align="center" style="padding: 40px 10px">
+          <!-- Main Card -->
+          <div
+            style="
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: #12121a;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            "
+          >
+            <!-- Header with Gradient Border Bottom -->
+            <div
+              style="
+                padding: 40px 30px;
+                text-align: center;
+                border-bottom: 2px solid #2a2a35;
+                position: relative;
+              "
+            >
+              <!-- Gradient Line -->
+              <div
+                style="
+                  position: absolute;
+                  bottom: -1px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 100px;
+                  height: 3px;
+                  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+                "
+              ></div>
+
+              <h1
+                style="
+                  margin: 0;
+                  font-size: 28px;
+                  font-weight: 800;
+                  background: linear-gradient(90deg, #ffffff, #a0a0a0);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  color: #ffffff;
+                  letter-spacing: -0.5px;
+                "
+              >
+                New Inquiry
+              </h1>
+              <p
+                style="
+                  margin: 10px 0 0;
+                  color: #00d4ff;
+                  font-size: 14px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Portfolio Website
+              </p>
+            </div>
+
+            <!-- Body Content -->
+            <div style="padding: 40px 30px">
+              <p
+                style="
+                  color: #a0a0a0;
+                  font-size: 16px;
+                  margin: 0 0 25px;
+                  line-height: 1.6;
+                "
+              >
+                Hi Dilip,
+              </p>
+              <p
+                style="
+                  color: #ffffff;
+                  font-size: 16px;
+                  margin: 0 0 30px;
+                  line-height: 1.6;
+                "
+              >
+                You have received a new message from
+                <strong style="color: #00d4ff">{{user_name}}</strong> via your
+                portfolio contact form.
+              </p>
+
+              <!-- Details Box -->
+              <div
+                style="
+                  background-color: #1a1a24;
+                  border-radius: 12px;
+                  padding: 25px;
+                  border: 1px solid rgba(255, 255, 255, 0.05);
+                  margin-bottom: 30px;
+                "
+              >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        width: 80px;
+                        color: #7c3aed;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                      "
+                    >
+                      Name
+                    </td>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        color: #ffffff;
+                        font-size: 15px;
+                        font-weight: 500;
+                      "
+                    >
+                      {{user_name}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        width: 80px;
+                        color: #7c3aed;
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                      "
+                    >
+                      Email
+                    </td>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        color: #ffffff;
+                        font-size: 15px;
+                        font-weight: 500;
+                      "
+                    >
+                      <a
+                        href="mailto:{{user_email}}"
+                        style="
+                          color: #ffffff;
+                          text-decoration: none;
+                          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                        "
+                        >{{user_email}}</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Message Section -->
+              <div style="margin-bottom: 35px">
+                <h3
+                  style="
+                    margin: 0 0 15px;
+                    color: #a0a0a0;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                  "
+                >
+                  Message
+                </h3>
+                <div
+                  style="
+                    background-color: rgba(255, 255, 255, 0.03);
+                    border-left: 3px solid #00d4ff;
+                    padding: 20px;
+                    border-radius: 4px;
+                    color: #e0e0e0;
+                    line-height: 1.8;
+                    font-size: 15px;
+                  "
+                >
+                  {{message}}
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <div style="text-align: center">
+                <a
+                  href="mailto:{{user_email}}"
+                  style="
+                    display: inline-block;
+                    padding: 14px 35px;
+                    background: linear-gradient(135deg, #00d4ff, #7c3aed);
+                    color: #ffffff;
+                    text-decoration: none;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    font-size: 15px;
+                    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+                  "
+                >
+                  Reply to {{user_name}}
+                </a>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div
+              style="
+                background-color: #0d0d12;
+                padding: 25px;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+              "
+            >
+              <p style="margin: 0; color: #555; font-size: 12px">
+                Portfolio Notification System
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
