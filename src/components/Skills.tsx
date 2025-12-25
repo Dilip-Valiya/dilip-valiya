@@ -38,64 +38,17 @@ const Skills = () => {
   ];
 
   return (
-    <section
-      id="skills"
-      style={{
-        padding: "var(--section-padding)",
-        backgroundColor: "rgba(255,255,255,0.02)",
-      }}
-    >
+    <section id="skills" className="skills-section">
       <div className="container">
         <h2 className="section-title">Technical Skills</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "2rem",
-          }}
-        >
+        <div className="skills-grid">
           {skillCategories.map((category, index) => (
-            <div key={index} className="glass-card" style={{ height: "100%" }}>
-              <h3
-                style={{
-                  fontSize: "1.25rem",
-                  marginBottom: "1.5rem",
-                  color: "var(--primary)",
-                  borderBottom: "1px solid rgba(255,255,255,0.1)",
-                  paddingBottom: "0.5rem",
-                }}
-              >
-                {category.title}
-              </h3>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
+            <div key={index} className="glass-card skills-category-card">
+              <h3 className="skills-category-title">{category.title}</h3>
+              <div className="skills-list">
                 {category.skills.map((skill, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      padding: "8px 16px",
-                      borderRadius: "50px",
-                      backgroundColor: "rgba(255,255,255,0.05)",
-                      color: "white",
-                      fontSize: "0.9rem",
-                      border: "1px solid rgba(255,255,255,0.05)",
-                      transition: "all 0.3s ease",
-                      cursor: "default",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor =
-                        "rgba(0, 212, 255, 0.1)";
-                      e.currentTarget.style.borderColor = "var(--primary)";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor =
-                        "rgba(255,255,255,0.05)";
-                      e.currentTarget.style.borderColor =
-                        "rgba(255,255,255,0.05)";
-                      e.currentTarget.style.transform = "translateY(0)";
-                    }}
-                  >
+                  <span key={idx} className="skill-tag">
                     {skill}
                   </span>
                 ))}

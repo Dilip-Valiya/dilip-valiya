@@ -2,9 +2,9 @@ const Experience = () => {
   const experiences = [
     {
       company: "Thoughtworks",
-      location: "(/tw)",
+      location: "Pune",
       role: "Senior UI Developer (FTE Consultant)",
-      period: "Mar 2024 – Present",
+      period: "Mar 2024 - Present",
       clients: [
         {
           name: "Corteva Agriscience",
@@ -32,7 +32,7 @@ const Experience = () => {
       company: "ZopSmart",
       location: "Bangalore",
       role: "Software Engineer",
-      period: "Jan 2021 – Mar 2024",
+      period: "Jan 2021 - Mar 2024",
       clients: [
         {
           name: "Kroger",
@@ -59,125 +59,37 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" style={{ padding: "var(--section-padding)" }}>
+    <section id="experience" className="experience-section">
       <div className="container">
         <h2 className="section-title">Experience</h2>
 
-        <div style={{ position: "relative", marginTop: "2rem" }}>
+        <div className="timeline-container">
           {/* Timeline line */}
-          <div
-            style={{
-              position: "absolute",
-              left: "20px",
-              top: 0,
-              bottom: 0,
-              width: "2px",
-              background:
-                "linear-gradient(to bottom, var(--primary), var(--secondary))",
-              display: "none", // Hidden on mobile, shown on desktop via media query could be better but sticking to simple responsive layout
-            }}
-          ></div>
-
-          <style>{`
-                @media (min-width: 768px) {
-                    .timeline-line { display: block !important; }
-                    .exp-content { margin-left: 3rem !important; }
-                }
-            `}</style>
-          <div
-            className="timeline-line"
-            style={{
-              position: "absolute",
-              left: "20px",
-              top: 0,
-              bottom: 0,
-              width: "2px",
-              background:
-                "linear-gradient(to bottom, var(--primary), var(--secondary))",
-              display: "none",
-            }}
-          ></div>
+          <div className="timeline-line"></div>
 
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              style={{ marginBottom: "4rem", position: "relative" }}
-            >
+            <div key={index} className="experience-item">
               {/* Dot */}
-              <div
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  backgroundColor: "var(--primary)",
-                  borderRadius: "50%",
-                  position: "absolute",
-                  left: "11px",
-                  top: "0",
-                  boxShadow: "0 0 10px var(--primary-glow)",
-                  display: "none",
-                }}
-                className="timeline-dot"
-              ></div>
-              <style>{`
-                    @media (min-width: 768px) {
-                        .timeline-dot { display: block !important; }
-                    }
-                `}</style>
+              <div className="timeline-dot"></div>
 
-              <div
-                className="exp-content glass-card"
-                style={{ marginLeft: "0", transition: "all 0.3s" }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    marginBottom: "1rem",
-                    borderBottom: "1px solid rgba(255,255,255,0.1)",
-                    paddingBottom: "1rem",
-                  }}
-                >
+              <div className="glass-card experience-card">
+                <div className="experience-header">
                   <div>
-                    <h3 style={{ fontSize: "1.5rem", color: "white" }}>
-                      {exp.company}
-                    </h3>
-                    <p style={{ color: "var(--primary)" }}>{exp.role}</p>
+                    <h3 className="experience-company">{exp.company}</h3>
+                    <p className="experience-role">{exp.role}</p>
                   </div>
                   <div style={{ textAlign: "right" }}>
-                    <p style={{ color: "var(--text-muted)" }}>{exp.period}</p>
-                    <p
-                      style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}
-                    >
-                      {exp.location}
-                    </p>
+                    <p className="experience-period">{exp.period}</p>
+                    <p className="experience-location">{exp.location}</p>
                   </div>
                 </div>
 
                 {exp.clients.map((client, cIndex) => (
-                  <div key={cIndex} style={{ marginTop: "1.5rem" }}>
-                    <h4
-                      style={{
-                        fontSize: "1.1rem",
-                        color: "var(--secondary)",
-                        marginBottom: "0.8rem",
-                      }}
-                    >
-                      Client: {client.name}
-                    </h4>
-                    <ul style={{ paddingLeft: "1.2rem" }}>
+                  <div key={cIndex} className="client-block">
+                    <h4 className="client-title">Client: {client.name}</h4>
+                    <ul className="client-details">
                       {client.details.map((detail, dIndex) => (
-                        <li
-                          key={dIndex}
-                          style={{
-                            marginBottom: "0.5rem",
-                            color: "var(--text-muted)",
-                            listStyleType: "disc",
-                            fontSize: "0.95rem",
-                          }}
-                        >
-                          {detail}
-                        </li>
+                        <li key={dIndex}>{detail}</li>
                       ))}
                     </ul>
                   </div>

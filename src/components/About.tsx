@@ -2,35 +2,20 @@ import { Download } from "react-feather";
 
 const About = () => {
   return (
-    <section id="about" style={{ padding: "var(--section-padding)" }}>
+    <section id="about" className="about-section">
       <div className="container">
         <h2 className="section-title">About Me</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "4rem",
-            alignItems: "center",
-          }}
-        >
-          <div className="glass-card">
-            <h3
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "1.5rem",
-                color: "var(--primary)",
-              }}
-            >
-              Professional Summary
-            </h3>
-            <p style={{ marginBottom: "1.5rem", color: "var(--text-muted)" }}>
+        <div className="about-grid">
+          <div className="glass-card about-summary-card">
+            <h3 className="about-summary-title">Professional Summary</h3>
+            <p className="about-summary-text">
               UI Developer with 5+ years of experience building scalable, secure
               web applications using React, Next.js, and Azure. Delivered
               production-ready features for clients like Corteva and Kroger,
               with a focus on TDD and DevOps practices.
             </p>
-            <p style={{ marginBottom: "1.5rem", color: "var(--text-muted)" }}>
+            <p className="about-summary-text">
               Currently working at Thoughtworks as a Senior UI Developer,
               exploring backend technologies and enhancing user experiences
               through clean, efficient code and modern design principles.
@@ -45,40 +30,16 @@ const About = () => {
             </button>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "2rem",
-            }}
-          >
+          <div className="about-stats-grid">
             {[
               { number: "5+", label: "Years Experience" },
               { number: "10+", label: "Projects Completed" },
               { number: "4+", label: "Major Clients" },
               { number: "25k+", label: "Users Impacted" },
             ].map((stat, index) => (
-              <div
-                key={index}
-                className="glass-card"
-                style={{ textAlign: "center", padding: "2rem 1rem" }}
-              >
-                <div
-                  style={{
-                    fontSize: "3rem",
-                    fontWeight: 800,
-                    background:
-                      "linear-gradient(135deg, var(--primary), var(--secondary))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {stat.number}
-                </div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
-                  {stat.label}
-                </div>
+              <div key={index} className="glass-card stat-card">
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
               </div>
             ))}
           </div>

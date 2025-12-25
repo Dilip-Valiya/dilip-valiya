@@ -14,10 +14,6 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // NOTE: These are placeholder IDs. You need to replace them with your actual EmailJS Service ID, Template ID, and Public Key
-    // or set them up in your environment variables.
-    // For now, we will simulate a success after a delay if keys are missing, or try to send if they exist.
-
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -47,158 +43,66 @@ const Contact = () => {
           });
         }
       );
+      // Clear status message after 6 seconds
+      setTimeout(() => {
+        setStatus({ type: null, message: "" });
+      }, 6000);
     }
   };
 
   return (
-    <section
-      id="contact"
-      style={{
-        padding: "var(--section-padding)",
-        backgroundColor: "rgba(255,255,255,0.02)",
-      }}
-    >
+    <section id="contact" className="contact-section">
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "4rem",
-          }}
-        >
+        <div className="contact-grid">
           {/* Contact Info */}
-          <div>
-            <h3
-              style={{
-                fontSize: "2rem",
-                marginBottom: "1rem",
-                background: "linear-gradient(90deg, #fff, #aaa)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Let's Talk
-            </h3>
-            <p
-              style={{
-                color: "var(--text-muted)",
-                marginBottom: "3rem",
-                fontSize: "1.1rem",
-              }}
-            >
+          <div className="contact-info">
+            <h3 className="contact-heading">Let's Talk</h3>
+            <p className="contact-intro">
               I'm currently open to new opportunities and interesting projects.
               Whether you have a question or just want to say hi, feel free to
               reach out!
             </p>
 
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
-            >
-              <a
-                href="mailto:dilipkvaliya@gmail.com"
-                style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
-              >
-                <div
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(0, 212, 255, 0.1)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--primary)",
-                  }}
-                >
+            <div className="contact-details">
+              <a href="mailto:dilipkvaliya@gmail.com" className="contact-link">
+                <div className="contact-icon-wrapper icon-primary">
                   <Mail />
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-                    Email
-                  </p>
-                  <p style={{ fontSize: "1.1rem", color: "white" }}>
-                    dilipkvaliya@gmail.com
-                  </p>
+                  <p className="contact-label">Email</p>
+                  <p className="contact-value">dilipkvaliya@gmail.com</p>
                 </div>
               </a>
 
-              <a
-                href="tel:+919824431667"
-                style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
-              >
-                <div
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(124, 58, 237, 0.1)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--secondary)",
-                  }}
-                >
+              <a href="tel:+919824431667" className="contact-link">
+                <div className="contact-icon-wrapper icon-secondary">
                   <Phone />
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-                    Phone
-                  </p>
-                  <p style={{ fontSize: "1.1rem", color: "white" }}>
-                    +91 9824431667
-                  </p>
+                  <p className="contact-label">Phone</p>
+                  <p className="contact-value">+91 9824431667</p>
                 </div>
               </a>
 
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
-              >
-                <div
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                  }}
-                >
+              <div className="contact-link">
+                <div className="contact-icon-wrapper icon-white">
                   <MapPin />
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-                    Location
-                  </p>
-                  <p style={{ fontSize: "1.1rem", color: "white" }}>India</p>
+                  <p className="contact-label">Location</p>
+                  <p className="contact-value">India</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card">
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.5rem",
-              }}
-            >
-              <div>
-                <label
-                  htmlFor="user_name"
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    color: "var(--text-muted)",
-                  }}
-                >
+          <div className="glass-card contact-form-card">
+            <form ref={form} onSubmit={sendEmail} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="user_name" className="form-label">
                   Name
                 </label>
                 <input
@@ -206,16 +110,7 @@ const Contact = () => {
                   name="user_name"
                   id="user_name"
                   required
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    backgroundColor: "rgba(0,0,0,0.2)",
-                    color: "white",
-                    outline: "none",
-                    transition: "border-color 0.3s",
-                  }}
+                  className="form-input"
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--primary)")
                   }
@@ -225,15 +120,8 @@ const Contact = () => {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="user_email"
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    color: "var(--text-muted)",
-                  }}
-                >
+              <div className="form-group">
+                <label htmlFor="user_email" className="form-label">
                   Email
                 </label>
                 <input
@@ -241,16 +129,7 @@ const Contact = () => {
                   name="user_email"
                   id="user_email"
                   required
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    backgroundColor: "rgba(0,0,0,0.2)",
-                    color: "white",
-                    outline: "none",
-                    transition: "border-color 0.3s",
-                  }}
+                  className="form-input"
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--primary)")
                   }
@@ -260,15 +139,8 @@ const Contact = () => {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    color: "var(--text-muted)",
-                  }}
-                >
+              <div className="form-group">
+                <label htmlFor="message" className="form-label">
                   Message
                 </label>
                 <textarea
@@ -276,17 +148,7 @@ const Contact = () => {
                   id="message"
                   rows={5}
                   required
-                  style={{
-                    width: "100%",
-                    padding: "12px 16px",
-                    borderRadius: "8px",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    backgroundColor: "rgba(0,0,0,0.2)",
-                    color: "white",
-                    outline: "none",
-                    transition: "border-color 0.3s",
-                    resize: "none",
-                  }}
+                  className="form-textarea"
                   onFocus={(e) =>
                     (e.target.style.borderColor = "var(--primary)")
                   }
@@ -298,9 +160,8 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary form-submit"
                 disabled={loading}
-                style={{ marginTop: "1rem", width: "100%" }}
               >
                 {loading ? (
                   <Loader className="animate-spin" />
@@ -314,17 +175,11 @@ const Contact = () => {
 
               {status.message && (
                 <p
-                  style={{
-                    marginTop: "1rem",
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor:
-                      status.type === "success"
-                        ? "rgba(0, 255, 0, 0.1)"
-                        : "rgba(255, 0, 0, 0.1)",
-                    color: status.type === "success" ? "#4ade80" : "#ef4444",
-                    textAlign: "center",
-                  }}
+                  className={`status-message ${
+                    status.type === "success"
+                      ? "status-success"
+                      : "status-error"
+                  }`}
                 >
                   {status.message}
                 </p>

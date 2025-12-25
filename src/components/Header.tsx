@@ -36,58 +36,14 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "py-4 bg-[rgba(10,10,15,0.8)] backdrop-blur-md shadow-lg"
-          : "py-6 bg-transparent"
-      }`}
-      style={{
-        backgroundColor: isScrolled ? "rgba(10, 10, 15, 0.8)" : "transparent",
-        backdropFilter: isScrolled ? "blur(12px)" : "none",
-        borderBottom: isScrolled
-          ? "1px solid rgba(255, 255, 255, 0.05)"
-          : "none",
-        padding: isScrolled ? "1rem 0" : "1.5rem 0",
-        transition: "all 0.3s ease",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 1000,
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div
-          className="logo"
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: 700,
-            background: "linear-gradient(90deg, #00d4ff, #7c3aed)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            cursor: "pointer",
-          }}
-          onClick={() => handleNavClick("#home")}
-        >
+    <header className={`header ${isScrolled ? "scrolled" : "transparent"}`}>
+      <div className="container header-container">
+        <div className="logo" onClick={() => handleNavClick("#home")}>
           DV.
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav" style={{ display: "none" }}>
-          <style>{`
-            @media (min-width: 768px) {
-              .desktop-nav { display: flex !important; gap: 2rem; align-items: center; }
-              .mobile-toggle { display: none !important; }
-            }
-          `}</style>
+        <nav className="desktop-nav">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -96,34 +52,17 @@ const Header = () => {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
-              style={{
-                color: "var(--text-muted)",
-                fontWeight: 500,
-                fontSize: "0.95rem",
-                transition: "color 0.3s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--text-muted)")
-              }
+              className="nav-link"
             >
               {link.name}
             </a>
           ))}
-          <div
-            style={{
-              display: "flex",
-              gap: "1rem",
-              marginLeft: "1rem",
-              paddingLeft: "1rem",
-              borderLeft: "1px solid rgba(255,255,255,0.1)",
-            }}
-          >
+          <div className="nav-socials">
             <a
               href="https://github.com/Dilip-Valiya"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "white" }}
+              className="social-icon"
             >
               <GitHub size={20} />
             </a>
@@ -131,7 +70,7 @@ const Header = () => {
               href="https://linkedin.com/in/dilipkvaliya"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "white" }}
+              className="social-icon"
             >
               <Linkedin size={20} />
             </a>
@@ -142,34 +81,13 @@ const Header = () => {
         <button
           className="mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          style={{
-            background: "none",
-            border: "none",
-            color: "white",
-            cursor: "pointer",
-          }}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div
-            style={{
-              position: "absolute",
-              top: "100%",
-              left: 0,
-              right: 0,
-              backgroundColor: "var(--bg-card)",
-              padding: "2rem",
-              borderBottom: "1px solid rgba(255,255,255,0.05)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-              alignItems: "center",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-            }}
-          >
+          <div className="mobile-menu">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -178,21 +96,17 @@ const Header = () => {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                style={{
-                  color: "white",
-                  fontSize: "1.1rem",
-                  fontWeight: 500,
-                }}
+                className="mobile-nav-link"
               >
                 {link.name}
               </a>
             ))}
-            <div style={{ display: "flex", gap: "1.5rem", marginTop: "1rem" }}>
+            <div className="mobile-socials">
               <a
                 href="https://github.com/Dilip-Valiya"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "white" }}
+                className="social-icon"
               >
                 <GitHub size={24} />
               </a>
@@ -200,14 +114,11 @@ const Header = () => {
                 href="https://linkedin.com/in/dilipkvaliya"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "white" }}
+                className="social-icon"
               >
                 <Linkedin size={24} />
               </a>
-              <a
-                href="mailto:dilipkvaliya@gmail.com"
-                style={{ color: "white" }}
-              >
+              <a href="mailto:dilipkvaliya@gmail.com" className="social-icon">
                 <Mail size={24} />
               </a>
             </div>

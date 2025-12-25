@@ -21,40 +21,17 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" style={{ padding: "var(--section-padding)" }}>
+    <section id="projects" className="projects-section">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "2.5rem",
-          }}
-        >
+        <div className="projects-grid">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="glass-card"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-              }}
-            >
+            <div key={index} className="glass-card project-card">
               <div style={{ flex: 1 }}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  <h3 style={{ fontSize: "1.4rem", color: "white" }}>
-                    {project.title}
-                  </h3>
-                  <div style={{ display: "flex", gap: "10px" }}>
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <div className="project-links">
                     {project.github && (
                       <a
                         href={project.github}
@@ -78,36 +55,12 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <p
-                  style={{
-                    color: "var(--text-muted)",
-                    marginBottom: "1.5rem",
-                    lineHeight: "1.7",
-                  }}
-                >
-                  {project.description}
-                </p>
+                <p className="project-description">{project.description}</p>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "0.8rem",
-                  marginTop: "auto",
-                }}
-              >
+              <div className="project-tags">
                 {project.tags.map((tag, tIndex) => (
-                  <span
-                    key={tIndex}
-                    style={{
-                      fontSize: "0.85rem",
-                      color: "var(--secondary)",
-                      backgroundColor: "rgba(124, 58, 237, 0.1)",
-                      padding: "4px 12px",
-                      borderRadius: "20px",
-                    }}
-                  >
+                  <span key={tIndex} className="project-tag">
                     {tag}
                   </span>
                 ))}

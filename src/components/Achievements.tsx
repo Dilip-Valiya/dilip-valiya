@@ -8,53 +8,23 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" style={{ padding: "var(--section-padding)" }}>
+    <section id="achievements" className="achievements-section">
       <div className="container">
         <h2 className="section-title">Achievements</h2>
 
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <div className="achievements-container">
           <div className="glass-card">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "start",
-                  gap: "1rem",
-                  marginBottom:
-                    index !== achievements.length - 1 ? "1.5rem" : "0",
-                  paddingBottom:
-                    index !== achievements.length - 1 ? "1.5rem" : "0",
-                  borderBottom:
-                    index !== achievements.length - 1
-                      ? "1px solid rgba(255,255,255,0.05)"
-                      : "none",
-                }}
+                className={`achievement-item ${
+                  index !== achievements.length - 1 ? "with-border" : ""
+                }`}
               >
-                <div
-                  style={{
-                    backgroundColor: "rgba(255, 215, 0, 0.1)",
-                    padding: "10px",
-                    borderRadius: "50%",
-                    color: "#FFD700",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minWidth: "44px",
-                  }}
-                >
+                <div className="achievement-icon">
                   <Award size={24} />
                 </div>
-                <p
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--text-muted)",
-                    lineHeight: "1.6",
-                    paddingTop: "8px",
-                  }}
-                >
-                  {achievement}
-                </p>
+                <p className="achievement-text">{achievement}</p>
               </div>
             ))}
           </div>
