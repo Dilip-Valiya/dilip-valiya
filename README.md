@@ -42,15 +42,6 @@ I am a **Senior UI Developer** at **Thoughtworks** with over **5+ years of exper
 
 ---
 
-### 📊 GitHub Stats
-
-<p align="left">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Dilip-Valiya&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dilip-Valiya&layout=compact&theme=tokyonight" />
-</p>
-
----
-
 ### 📫 Let's Connect!
 
 <p align="left">
