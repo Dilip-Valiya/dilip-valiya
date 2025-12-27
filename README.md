@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# 👋 Hi, I'm Dilip Valiya
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🚀 Senior UI Developer | Thoughtworks | India
 
-Currently, two official plugins are available:
+Building scalable, secure web applications with a focus on immersive digital experiences and clean, efficient code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+### 👨‍💻 About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I am a **Senior UI Developer** at **Thoughtworks** with over **5+ years of experience**. I specialize in building production-ready applications for global clients like **Corteva** and **Kroger**. My expertise lies in high-quality architecture, TDD, and modern frontend ecosystems.
 
-## Expanding the ESLint configuration
+- 🔭 Currently working on: Scalable supply chain and inventory management systems.
+- 🌱 Exploring: Backend technologies and AI-powered interfaces.
+- ⚡ Focus: Clean Code, TDD, and DevOps practices.
+- 🏎️ Impact: Successfully delivered projects impacting over 25k+ users.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛠️ Technical Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category          | Skills                                                  |
+| :---------------- | :------------------------------------------------------ |
+| **Languages**     | JavaScript, TypeScript, HTML, CSS, DSA                  |
+| **Frameworks**    | React.js, Next.js, Vite, React Query, MUI               |
+| **Testing**       | Jest, React Testing Library, Enzyme, TDD                |
+| **Tools & Cloud** | Git, GitHub, Azure, Docker, SonarQube, Rancher, Harness |
+| **Analytics**     | Adobe Analytics, Google Analytics                       |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 💼 Professional Experience
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Senior UI Developer @ Thoughtworks** (_Mar 2024 - Present_)
+  - Leading development for **Corteva Agriscience**, building critical web apps for sales and inventory tracking.
+  - Implemented secure authentication using MSAL-React & Azure.
+  - Championing TDD and performance monitoring through Sonar integration.
+- **Software Engineer @ ZopSmart** (_Jan 2021 - Mar 2024_)
+  - Developed cloud-management platforms for **Kroger** using Next.js.
+  - Built real-time log visualization tools with D3.js.
+  - Automated cloud workflows with Terraform and Docker.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 📊 GitHub Stats
+
+<p align="left">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Dilip-Valiya&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dilip-Valiya&layout=compact&theme=tokyonight" />
+</p>
+
+---
+
+### 📫 Let's Connect!
+
+<p align="left">
+  <a href="https://linkedin.com/in/dilipkvaliya" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:dilipkvaliya@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="tel:+919824431667">
+    <img src="https://img.shields.io/badge/Phone-4CAF50?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <i>"Code is like humor. When you have to explain it, it’s bad."</i>
+</p>
